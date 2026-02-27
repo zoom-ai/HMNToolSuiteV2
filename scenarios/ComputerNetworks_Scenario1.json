@@ -1,0 +1,138 @@
+{
+    "name": "Computer Networks Journal Scenario 1",
+    "description": "Benchmark scenario for AUHO validation in a multi-tech urban environment (CDMA, WLAN, WiMax).",
+    "version": "1.0",
+    "networks": [
+        {
+            "id": "bs1",
+            "name": "BS1",
+            "type": "cdma",
+            "x": 226,
+            "y": 361,
+            "coverageRadius": 300,
+            "bandwidth": 1.7,
+            "costRate": 0.8,
+            "powerConsumption": 1.4
+        },
+        {
+            "id": "bs2",
+            "name": "BS2",
+            "type": "cdma",
+            "x": 491,
+            "y": 427,
+            "coverageRadius": 300,
+            "bandwidth": 1.7,
+            "costRate": 0.8,
+            "powerConsumption": 1.4
+        },
+        {
+            "id": "bs3",
+            "name": "BS3",
+            "type": "cdma",
+            "x": 775,
+            "y": 502,
+            "coverageRadius": 300,
+            "bandwidth": 1.7,
+            "costRate": 0.8,
+            "powerConsumption": 1.4
+        },
+        {
+            "id": "ap1",
+            "name": "AP1",
+            "type": "wlan",
+            "x": 368,
+            "y": 367,
+            "coverageRadius": 120,
+            "bandwidth": 11,
+            "costRate": 0.0,
+            "powerConsumption": 0.06
+        },
+        {
+            "id": "ap2",
+            "name": "AP2",
+            "type": "wlan",
+            "x": 526,
+            "y": 396,
+            "coverageRadius": 120,
+            "bandwidth": 11,
+            "costRate": 0.0,
+            "powerConsumption": 0.06
+        },
+        {
+            "id": "ap3",
+            "name": "AP3",
+            "type": "wlan",
+            "x": 736,
+            "y": 451,
+            "coverageRadius": 120,
+            "bandwidth": 11,
+            "costRate": 0.0,
+            "powerConsumption": 0.06
+        },
+        {
+            "id": "ras1",
+            "name": "RAS1",
+            "type": "wimax",
+            "x": 743,
+            "y": 534,
+            "coverageRadius": 240,
+            "bandwidth": 30,
+            "costRate": 0.2,
+            "powerConsumption": 0.08
+        }
+    ],
+    "mobileNodes": [
+        {
+            "id": "mn1",
+            "name": "Mobile Node 1",
+            "x": 147,
+            "y": 316,
+            "velocity": 40,
+            "supportedInterfaces": [
+                "cdma",
+                "wlan",
+                "wimax"
+            ],
+            "currentNetworkId": "bs1",
+            "pathIndex": 0,
+            "path": [
+                {
+                    "x": 147,
+                    "y": 316
+                },
+                {
+                    "x": 219,
+                    "y": 317
+                },
+                {
+                    "x": 270,
+                    "y": 326
+                },
+                {
+                    "x": 344,
+                    "y": 352
+                },
+                {
+                    "x": 610,
+                    "y": 419
+                },
+                {
+                    "x": 633,
+                    "y": 428
+                },
+                {
+                    "x": 690,
+                    "y": 451
+                },
+                {
+                    "x": 807,
+                    "y": 486
+                },
+                {
+                    "x": 864,
+                    "y": 504
+                }
+            ]
+        }
+    ]
+}

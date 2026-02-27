@@ -1,0 +1,61 @@
+{
+    "name": "Ping-Pong Effect Test Scenario",
+    "description": "Designed to test handover stability between two overlapping CDMA base stations with fluctuating signals.",
+    "version": "1.0",
+    "networks": [
+        {
+            "id": "bs_stable",
+            "name": "BS Stable",
+            "type": "cdma",
+            "x": 200,
+            "y": 300,
+            "coverageRadius": 400,
+            "bandwidth": 1.7,
+            "costRate": 0.8,
+            "powerConsumption": 1.4
+        },
+        {
+            "id": "bs_fluct",
+            "name": "BS Fluctuating",
+            "type": "cdma",
+            "x": 600,
+            "y": 300,
+            "coverageRadius": 400,
+            "bandwidth": 1.7,
+            "costRate": 0.8,
+            "powerConsumption": 1.4
+        }
+    ],
+    "mobileNodes": [
+        {
+            "id": "mn_tester",
+            "name": "Test Device",
+            "x": 400,
+            "y": 300,
+            "velocity": 5,
+            "supportedInterfaces": [
+                "cdma"
+            ],
+            "currentNetworkId": "bs_stable",
+            "pathIndex": 0,
+            "path": [
+                {
+                    "x": 400,
+                    "y": 300
+                },
+                {
+                    "x": 410,
+                    "y": 300
+                },
+                {
+                    "x": 400,
+                    "y": 300
+                },
+                {
+                    "x": 390,
+                    "y": 300
+                }
+            ]
+        }
+    ]
+}
