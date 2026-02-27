@@ -1,31 +1,37 @@
-\documentclass[10pt,journal,compsoc]{IEEEtran}
-
-\usepackage[pdftex]{graphicx}
-\graphicspath{{../}}
-\usepackage{amsmath}
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
 \usepackage{url}
+
+\graphicspath{{../}}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{document}
 
 \title{HMNToolSuite-ng: An Extensible Research Platform for Handover Decision Algorithms in Heterogeneous Mobile Networks}
 
-\author{Joon-Myung Kang, PhD\\
-Independent Researcher\\
-Email: joonmyung.kang@gmail.com}
+\author{\IEEEauthorblockN{Joon-Myung Kang, PhD}
+\IEEEauthorblockA{\textit{Independent Researcher} \\
+joonmyung.kang@gmail.com}
+}
 
-\IEEEtitleabstractindextext{%
+\maketitle
+
 \begin{abstract}
 With the proliferation of heterogeneous mobile networks (HMNs), seamless vertical handover (VHO) remains a critical challenge for maintaining Quality of Service (QoS). While various algorithms have been proposed, the research community lacks a unified, extensible platform for rapid prototyping and comparative analysis of handover logic. This paper introduces HMNToolSuite-ng, a next-generation simulation and emulation framework designed for extensibility. Unlike its predecessors, HMNToolSuite-ng features a modular "plugin" architecture that allows researchers to implement and compare diverse handover decision algorithms---including the Autonomic Handover (AUHO) framework---within a unified interactive environment. We demonstrate the tool's capabilities through a series of benchmark scenarios and comparative studies between six distinct handover policies.
 \end{abstract}
 
 \begin{IEEEkeywords}
 Heterogeneous Mobile Networks, Vertical Handover, AUHO, Simulation Framework, Plugin Architecture, APAV, APSV.
-\end{IEEEkeywords}}
-
-\maketitle
-
-\IEEEdisplaynontitleabstractindextext
-\IEEEpeerreviewmaketitle
+\end{IEEEkeywords}
 
 \section{Introduction}
 The evolution of mobile communication has led to an environment where diverse access technologies (e.g., CDMA, WLAN, WiMax, LTE) overlap. The core problem in this heterogeneous landscape is the Vertical Handover (VHO) decision: selecting the "best" network at the "best" time.
@@ -34,7 +40,7 @@ The original HMNToolSuite provided a foundational Java-based environment for sim
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.5in]{figure2_transition.png}
+\includegraphics[width=\linewidth]{paper/figure2_transition.png}
 \caption{Evolution from the monolithic legacy Java tool to the modern, modular HMNToolSuite-ng platform.}
 \label{fig_transition}
 \end{figure}
@@ -44,15 +50,15 @@ The primary contribution of HMNToolSuite-ng is its Algorithm-Agnostic Engine. Th
 
 \subsection{The Plugin Interface}
 Researchers can define new algorithms by implementing a standard IHandoverAlgorithm interface. This enables:
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Rapid Prototyping}: New logic can be written in TypeScript/JavaScript without touching the engine's physics or mobility models.
 \item \textbf{Modular Comparison}: Multiple algorithms can be registered and switched in real-time during a live simulation.
 \item \textbf{Data Isolation}: Each algorithm receives standardized HandoverMetrics (RSSI, Bandwidth, Cost, Power) but can interpret them uniquely.
-\end{enumerate}
+\end{itemize}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.5in]{figure1_architecture.png}
+\includegraphics[width=\linewidth]{paper/figure1_architecture.png}
 \caption{The modular handover simulation framework showing interchangeable algorithm plugins.}
 \label{fig_architecture}
 \end{figure}
@@ -71,7 +77,7 @@ To demonstrate the platform's versatility, we have implemented six reference alg
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.5in]{figure3_performance.png}
+\includegraphics[width=\linewidth]{paper/figure3_performance.png}
 \caption{Multi-dimensional performance comparison between AUHO and reference policies.}
 \label{fig_performance}
 \end{figure}
@@ -86,7 +92,7 @@ This scenario recreates the urban multi-tech environment published in the Comput
 By simulating a mobile node on the boundary of two cells, we demonstrate how AUHO's autonomic satisfaction values significantly reduce the "Ping-Pong" effect compared to traditional RSS thresholds, leading to more stable connections and reduced signaling overhead.
 
 \section{Conclusion}
-HMNToolSuite-ng represents a significant step forward in handover research tooling. By lowering the barrier to entry for implementing custom decision logic and providing a rich, interactive visualization suite, the platform enables researchers to focus on algorithmic innovation rather than infrastructure development. Future work will involve integrating Machine Learning libraries (e.g., TensorFlow.js) directly into the plugin system for predictive handover management.
+HMNToolSuite-ng represents a significant step forward in handover research tooling. By lowering the barrier to entry for implementing custom decision logic and providing a rich, interactive visualization suite, the platform enables researchers to focus on algorithmic innovation rather than infrastructure development.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
