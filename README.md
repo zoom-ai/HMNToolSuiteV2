@@ -10,7 +10,7 @@
 [![UI Library](https://img.shields.io/badge/UI-React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Styling](https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Language](https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-Research-blue?style=for-the-badge)](#)
+[![Award](https://img.shields.io/badge/Award-Best_Paper_CNS'11-FFD700?style=for-the-badge&logo=award&logoColor=black)](https://ecse.postech.ac.kr/dr-joon-myung-kang-was-awarded-the-best-paper-award-at-cns11/)
 [![POSTECH](https://img.shields.io/badge/POSTECH-DP%26NM-003580?style=for-the-badge)](http://dpnm.postech.ac.kr)
 
 </div>
@@ -102,11 +102,15 @@ npm run build:linux
 
 ## 📜 Core Research
 
+> [!IMPORTANT]
+> 🏆 **Winner of the Best Paper Award at CNS '11**  
+> This project is recognized for its contribution to mobility management in heterogeneous networks.
+
 This tool suite is based on the research presented in:
 
 > **HMNToolSuite: Tool Support for Mobility Management of Mobile Devices in Heterogeneous Mobile Networks**  
 > *Joon-Myung Kang, Sin-seok Seo, John Strassner, and James Won-Ki Hong*  
-> Published in: CNS '11: Proceedings of the 14th Communications and Networking Symposium, April 2011.
+> Published in: **CNS '11**: Proceedings of the 14th Communications and Networking Symposium, April 2011.
 
 ### Abstract
 As mobile devices grow and networks become heterogeneous, mobility management at the application layer (Layer 7) becomes critical. Unlike traditional simulators that focus on Layer 2/3 protocols, **HMNToolSuite** focuses on handover decisions and access network selection to satisfy user demands based on context information (location, speed, cost, etc.).
