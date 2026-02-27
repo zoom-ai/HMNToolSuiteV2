@@ -100,10 +100,32 @@ npm run build:linux
 
 ---
 
+## 📜 Core Research
+
+This tool suite is based on the research presented in:
+
+> **HMNToolSuite: Tool Support for Mobility Management of Mobile Devices in Heterogeneous Mobile Networks**  
+> *Joon-Myung Kang, Sin-seok Seo, John Strassner, and James Won-Ki Hong*  
+> Published in: CNS '11: Proceedings of the 14th Communications and Networking Symposium, April 2011.
+
+### Abstract
+As mobile devices grow and networks become heterogeneous, mobility management at the application layer (Layer 7) becomes critical. Unlike traditional simulators that focus on Layer 2/3 protocols, **HMNToolSuite** focuses on handover decisions and access network selection to satisfy user demands based on context information (location, speed, cost, etc.).
+
+📄 **Read the full paper**: [paper/HMNToolSuite.pdf](paper/HMNToolSuite.pdf)
+
+---
+
+## 🔗 Related Projects
+
+- [HMNToolSuite (v1)](https://github.com/zoom-ai/HMNToolSuite) - The original Java-based implementation.
+
+---
+
 ## 📂 Project Architecture
 - `src/main/` - Electron backend containing the `NetworkEmulator`, `ScenarioManager`, and Node.js-based VHO logic.
 - `src/renderer/` - The React application, containing components like `NetworkEditor`, `MonitorView`, and the layout/styling.
 - `src/preload/` - IPC bridges safely securely exposing backend APIs to the React frontend.
+- `paper/` - Original research documentation.
 
 ---
 
@@ -112,4 +134,4 @@ npm run build:linux
 Originally developed and researched by **Eliot J.M. Kang** at [**POSTECH DP&NM Lab**](http://dpnm.postech.ac.kr).
 Rebuilt and modernized for current technological standards.
 
-> 📄 For core algorithmic details, refer to the original research papers outlining Autonomic Handover Decisions.
+> 📄 For core algorithmic details, refer to the [original research paper](paper/HMNToolSuite.pdf) outlining Autonomic Handover Decisions.
