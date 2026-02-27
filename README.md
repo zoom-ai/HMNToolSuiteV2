@@ -133,6 +133,7 @@ For a detailed look at the software architecture, component design, and research
 - `src/renderer/` - The React application, containing components like `NetworkEditor`, `MonitorView`, and the layout/styling.
 - `src/preload/` - IPC bridges safely securely exposing backend APIs to the React frontend.
 - `design/` - High-level system architecture and design principles.
+- `manual/` - Comprehensive [**User Manual**](manual/UserManual.md) with step-by-step guides.
 - `paper/` - Original research documentation.
 
 ---
