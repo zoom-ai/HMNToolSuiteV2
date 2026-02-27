@@ -126,9 +126,13 @@ As mobile devices grow and networks become heterogeneous, mobility management at
 ---
 
 ## 📂 Project Architecture
+
+For a detailed look at the software architecture, component design, and research principles, please see the [**System Design Document**](design/SystemDesign.md).
+
 - `src/main/` - Electron backend containing the `NetworkEmulator`, `ScenarioManager`, and Node.js-based VHO logic.
 - `src/renderer/` - The React application, containing components like `NetworkEditor`, `MonitorView`, and the layout/styling.
 - `src/preload/` - IPC bridges safely securely exposing backend APIs to the React frontend.
+- `design/` - High-level system architecture and design principles.
 - `paper/` - Original research documentation.
 
 ---
