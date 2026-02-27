@@ -70,7 +70,7 @@ export function NetworkEditor({ backendNodes = [] }: { backendNodes?: any[] }) {
                 proOptions={{ hideAttribution: true }}
             >
                 <Background gap={24} size={2} color="#262626" />
-                <Controls showInteractive={false} className="bg-neutral-900 border-neutral-800 fill-neutral-400" />
+                <Controls showInteractive={false} />
             </ReactFlow>
 
             {/* Editor specific overlay UI (Floating Add Buttons) */}

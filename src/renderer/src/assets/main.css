@@ -27,7 +27,7 @@
 
   --color-card: hsl(var(--card) / <alpha-value>);
   --color-card-foreground: hsl(var(--card-foreground) / <alpha-value>);
-  
+
   --radius-xl: calc(var(--radius) + 4px);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -68,7 +68,25 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* React Flow Controls Modernization */
+.react-flow__controls {
+  @apply !bg-neutral-900/80 !backdrop-blur-md !border !border-neutral-800 !rounded-xl !p-1 !flex !flex-col !gap-1 !shadow-2xl;
+}
+
+.react-flow__controls-button {
+  @apply !bg-neutral-800/50 !border-none !rounded-lg !w-8 !h-8 !flex !items-center !justify-center !transition-all hover: !bg-blue-600/20 hover: !ring-1 hover: !ring-blue-500/50;
+}
+
+.react-flow__controls-button svg {
+  @apply !fill-blue-400 !w-4 !h-4 !drop-shadow-[0_0_8px_rgba(96, 165, 250, 0.5)];
+}
+
+.react-flow__attribution {
+  @apply !hidden;
 }
