@@ -80,7 +80,11 @@
 }
 
 .react-flow__controls-button {
-  @apply !bg-neutral-800/50 !border-none !rounded-lg !w-8 !h-8 !flex !items-center !justify-center !transition-all hover: !bg-blue-600/20 hover: !ring-1 hover: !ring-blue-500/50;
+  @apply !bg-neutral-800/50 !border-none !rounded-lg !w-8 !h-8 !flex !items-center !justify-center !transition-all;
+}
+
+.react-flow__controls-button:hover {
+  @apply !bg-blue-600/20 !ring-1 !ring-blue-500/50;
 }
 
 .react-flow__controls-button svg {
