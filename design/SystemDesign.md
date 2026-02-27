@@ -52,6 +52,37 @@ Handles the serialization of simulation states. It abstracts Electron's `dialog`
 
 ---
 
+## 🧠 Core Algorithm: AUHO (APAV + APSV)
+
+A defining feature of HMNToolSuite V2 is the **AUHO (Autonomic Handover)** decision logic. Unlike traditional handover mechanisms that rely solely on physical layer metrics, AUHO introduces a personalized, context-aware decision framework.
+
+### Traditional RSS vs. AUHO
+In traditional vertical handover, the **Received Signal Strength (RSS)** is the primary trigger. This often leads to the "Ping-pong effect," where a device rapidly switches between two networks as signal levels fluctuate, causing poor user experience and high overhead.
+
+**HMNToolSuite V2** differentiates itself by implementing the **AUHO** framework:
+
+![AUHO vs RSS Comparison](auho_vs_rss_diagram.png)
+
+### 1. APAV (Access Point Acceptance Value)
+The **Acceptance** phase filters the available access points based on the user's *hard requirements*. An AP is only "Acceptable" if it meets the minimum thresholds for:
+- **Bandwidth**: Sufficient for the current application (e.g., VoIP vs. Web).
+- **Security**: Matching the user's safety requirements (e.g., WPA3 vs. Open).
+- **Cost**: Within the user's budget constraints.
+
+### 2. APSV (Access Point Satisfaction Value)
+The **Satisfaction** phase ranks the "Acceptable" APs by calculating a personalized score. Users can define weightings ($w_i$) for various *soft metrics*:
+- **Signal Strength (RSSI)**: Physical link quality.
+- **Network Load**: Current congestion levels.
+- **Power Consumption**: Impact on device battery life.
+- **Service Cost**: Price per MB or duration.
+
+The APSV is typically calculated as a weighted sum:
+$$APSV = \sum_{i=1}^{n} w_i \cdot \text{NormalizedMetric}_i$$
+
+The handover is only executed if the target AP's APSV is significantly higher than the current AP's APSV (incorporating a **Hysteresis** value to prevent oscillations).
+
+---
+
 ## 🛠️ Design Principles
 
 - **Personalization over Generic Metrics**: Inspired by the research in *"Autonomic Management for Personalized Handover Decisions"*, the system prioritizes user context and preferences over simple signal strength (RSSI).
