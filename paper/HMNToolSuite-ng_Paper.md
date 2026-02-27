@@ -1,7 +1,8 @@
 # HMNToolSuite-ng: An Extensible Research Platform for Handover Decision Algorithms in Heterogeneous Mobile Networks
 
 **Dr. Joon-Myung Kang**  
-*Department of Computer Science and Engineering, POSTECH, Korea*
+*Independent Researcher*  
+*Email: joonmyung.kang@gmail.com*
 
 ---
 
