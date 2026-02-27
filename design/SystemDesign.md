@@ -84,6 +84,16 @@ $$APSV = \sum_{i=1}^{n} w_i \cdot \text{NormalizedMetric}_i$$
 
 The handover is only executed if the target AP's APSV is significantly higher than the current AP's APSV (incorporating a **Hysteresis** value to prevent oscillations).
 
+### Comparison with Reference Algorithms
+
+| Algorithm | Key Metrics | Decision Philosophy | Research Performance |
+| :--- | :--- | :--- | :--- |
+| **🏆 AUHO** | Multi-criteria + Context | Autonomic (APAV+APSV) | **Optimal / Normalized** |
+| **RSS-based** | Signal Strength (RSSI) | Traditional / Physical | High Ping-Pong Effect |
+| **Cost-based** | Service Cost | Economic / Budget | Poor Quality of Service |
+| **Quality-based** | RSSI + Bandwidth | Performance / QoE | Better than RSS-only |
+| **Lifetime-based** | Mobility (Speed) | Stability / Prediction | Good for high speed |
+
 ---
 
 ## 🛠️ Design Principles

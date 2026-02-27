@@ -44,6 +44,21 @@ This document provides a detailed explanation of the decision algorithms. The ce
 
 ---
 
+## 📊 Comparative Analysis Summary
+
+Based on the performance evaluations in **Dr. Joon-Myung Kang's PhD Thesis**, the table below summarizes how each algorithm handles handover decisions in heterogeneous environments:
+
+| Algorithm | Key Metrics | Decision Philosophy | Performance (2011) |
+| :--- | :--- | :--- | :--- |
+| **🏆 AUHO** | RSSI, BW, Cost, Power, User Preference | **Autonomic & Personalized** (APAV+APSV) | **Optimal (Best Case)** |
+| **RSS-based** | RSSI only | Physical Signal Strength | High Ping-Pong Effect |
+| **Cost-based** | Service Cost | Economic Efficiency | Poor QoS / High Latency |
+| **Quality-based** | RSSI + Bandwidth | Performance / QoE | Better than RSS |
+| **Lifetime-based** | Mobility (Speed / Direction) | Connection Stability | Good for high mobility |
+| **Random** | None | Stochastic (Baseline) | Worst Case (Control) |
+
+---
+
 ## 🚀 How to Compare
 To conduct a comparative study:
 1.  Open the **Network Map Editor**.
