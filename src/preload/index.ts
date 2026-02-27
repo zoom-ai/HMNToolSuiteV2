@@ -7,6 +7,7 @@ const api = {
   openScenario: () => ipcRenderer.invoke('scenario:open'),
   startEngine: () => ipcRenderer.send('engine:start'),
   stopEngine: () => ipcRenderer.send('engine:stop'),
+  setAlgorithm: (name: string) => ipcRenderer.send('engine:set-algorithm', name),
   onEngineUpdate: (callback: (data: any) => void) => {
     ipcRenderer.on('engine:update', (_event, value) => callback(value))
   }

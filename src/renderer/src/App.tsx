@@ -57,11 +57,17 @@ function App() {
       <Sidebar>
         <div className="bg-neutral-800 rounded p-3 border border-neutral-700">
           <label className="text-xs font-semibold text-neutral-400 mb-2 block uppercase tracking-wider">Handover Policy</label>
-          <select className="w-full bg-neutral-900 border border-neutral-700 rounded p-1.5 text-sm outline-none text-white focus:ring-1 focus:ring-blue-500">
-            <option>Autonomic (APAV/APSV)</option>
-            <option>Context-Aware</option>
-            <option>Fuzzy Logic</option>
-            <option>Random Baseline</option>
+          <select
+            className="w-full bg-neutral-900 border border-neutral-700 rounded p-1.5 text-sm outline-none text-white focus:ring-1 focus:ring-blue-500"
+            onChange={(e) => window.api.setAlgorithm(e.target.value)}
+            defaultValue="AUHO"
+          >
+            <option value="AUHO">Autonomic (APAV/APSV)</option>
+            <option value="RSS">RSS-based</option>
+            <option value="Cost">Cost-based</option>
+            <option value="Quality">Quality-based</option>
+            <option value="Lifetime">Lifetime-based</option>
+            <option value="Random">Random Baseline</option>
           </select>
         </div>
 

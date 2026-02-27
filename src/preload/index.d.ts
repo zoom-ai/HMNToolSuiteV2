@@ -8,6 +8,7 @@ declare global {
       openScenario: () => Promise<any>
       startEngine: () => void
       stopEngine: () => void
+      setAlgorithm: (name: string) => void
       onEngineUpdate: (callback: (data: any) => void) => void
     }
   }

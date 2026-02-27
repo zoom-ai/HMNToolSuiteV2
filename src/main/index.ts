@@ -3,6 +3,11 @@ import { join } from 'path'
 import { ScenarioManager } from './io/ScenarioManager'
 import { NetworkEmulator } from './engine/NetworkEmulator'
 import { ApavAlgorithm } from './engine/algorithms/ApavAlgorithm'
+import { RSSAlgorithm } from './engine/algorithms/RSSAlgorithm'
+import { CostAlgorithm } from './engine/algorithms/CostAlgorithm'
+import { QualityAlgorithm } from './engine/algorithms/QualityAlgorithm'
+import { LifetimeAlgorithm } from './engine/algorithms/LifetimeAlgorithm'
+import { RandomAlgorithm } from './engine/algorithms/RandomAlgorithm'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
@@ -67,6 +72,31 @@ app.whenReady().then(() => {
 
   ipcMain.on('engine:start', () => engine.start())
   ipcMain.on('engine:stop', () => engine.stop())
+
+  ipcMain.on('engine:set-algorithm', (_, name) => {
+    console.log(`Switching engine algorithm to: ${name}`)
+    switch (name) {
+      case 'RSS':
+        engine.setAlgorithm(new RSSAlgorithm())
+        break
+      case 'Cost':
+        engine.setAlgorithm(new CostAlgorithm())
+        break
+      case 'Quality':
+        engine.setAlgorithm(new QualityAlgorithm())
+        break
+      case 'Lifetime':
+        engine.setAlgorithm(new LifetimeAlgorithm())
+        break
+      case 'Random':
+        engine.setAlgorithm(new RandomAlgorithm())
+        break
+      case 'AUHO':
+      default:
+        engine.setAlgorithm(new ApavAlgorithm())
+        break
+    }
+  })
 
   // Wire up the engine update tick to send state back to all WebContents (renderers)
   engine.setOnUpdate(() => {
