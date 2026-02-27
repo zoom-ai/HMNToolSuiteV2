@@ -76,4 +76,5 @@ In the **Control Sidebar**, use the dropdown menu to select your decision logic:
 
 ## 🔗 Additional Resources
 - [System Design Document](../design/SystemDesign.md)
+- [**Developer Guide (Creating Custom Algorithms)**](DeveloperGuide.md)
 - [Original Research Papers](../paper/)
