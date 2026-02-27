@@ -62,7 +62,7 @@ function App() {
             onChange={(e) => window.api.setAlgorithm(e.target.value)}
             defaultValue="AUHO"
           >
-            <option value="AUHO">Autonomic (APAV/APSV)</option>
+            <option value="AUHO">AUHO (APAV+APSV)</option>
             <option value="RSS">RSS-based</option>
             <option value="Cost">Cost-based</option>
             <option value="Quality">Quality-based</option>

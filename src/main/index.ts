@@ -2,7 +2,7 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { ScenarioManager } from './io/ScenarioManager'
 import { NetworkEmulator } from './engine/NetworkEmulator'
-import { ApavAlgorithm } from './engine/algorithms/ApavAlgorithm'
+import { AUHOAlgorithm } from './engine/algorithms/AUHOAlgorithm'
 import { RSSAlgorithm } from './engine/algorithms/RSSAlgorithm'
 import { CostAlgorithm } from './engine/algorithms/CostAlgorithm'
 import { QualityAlgorithm } from './engine/algorithms/QualityAlgorithm'
@@ -58,7 +58,7 @@ app.whenReady().then(() => {
   })
 
   // Global Backend Engine Instance
-  const defaultAlgorithm = new ApavAlgorithm()
+  const defaultAlgorithm = new AUHOAlgorithm()
   const engine = new NetworkEmulator(defaultAlgorithm)
 
   // IPC Handlers
@@ -93,7 +93,7 @@ app.whenReady().then(() => {
         break
       case 'AUHO':
       default:
-        engine.setAlgorithm(new ApavAlgorithm())
+        engine.setAlgorithm(new AUHOAlgorithm())
         break
     }
   })

@@ -1,10 +1,20 @@
 # HMNToolSuite V2 - Handover Algorithms Reference
 
-This document provides a detailed explanation of the five reference handover decision algorithms implemented for comparison against the **AUHO (APAV + APSV)** algorithm.
+This document provides a detailed explanation of the decision algorithms. The central contribution of this tool is the **AUHO** algorithm, which is compared against several standard reference algorithms.
 
 ---
 
-## 1. Random (Baseline)
+## 🏆 Core Algorithm: AUHO (AUtonomic HandOver)
+
+- **Source**: Dr. Joon-Myung Kang's PhD Thesis (2011) and the **Computer Networks (Elsevier)** Journal.
+- **Components**: Incorporates **APAV** (Access Point Acceptance Value) and **APSV** (Access Point Satisfaction Value).
+- **Performance**: Validated in original research as the **highest-performing algorithm** among all comparison metrics at the time of publication (2011).
+- **Logic**: A multi-criteria, context-aware autonomic decision framework that filters networks based on user "Acceptance" (APAV) and ranks them based on personalized "Satisfaction" (APSV).
+- **Research Value**: Demonstrates significant reductions in unnecessary handovers (Ping-Pong effect) while maximizing Quality of Service (QoS) and user preferences.
+
+---
+
+## Reference Algorithms
 - **Logic**: Stochastically selects any available network from the detected list.
 - **Purpose**: Serves as a "worst-case" control group. It demonstrates how a lack of intelligent selection leads to frequent, unnecessary handovers and poor connectivity.
 - **Research Use**: Used to establish a baseline for "Number of Handovers" and "Average Throughput" metrics.

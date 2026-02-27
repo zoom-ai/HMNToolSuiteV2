@@ -52,9 +52,12 @@ Handles the serialization of simulation states. It abstracts Electron's `dialog`
 
 ---
 
-## 🧠 Core Algorithm: AUHO (APAV + APSV)
+## 🧠 Core Algorithm: AUHO (AUtonomic HandOver)
 
-A defining feature of HMNToolSuite V2 is the **AUHO (Autonomic Handover)** decision logic. Unlike traditional handover mechanisms that rely solely on physical layer metrics, AUHO introduces a personalized, context-aware decision framework.
+A defining feature of HMNToolSuite V2 is the **AUHO (Autonomic Handover)** decision logic, presented in **Dr. Joon-Myung Kang's PhD Thesis (2011)** and published in the **Computer Networks (Elsevier)** journal. Unlike traditional handover mechanisms that rely solely on physical layer metrics, AUHO introduces a personalized, context-aware decision framework.
+
+> [!NOTE]
+> 🏅 **Research Excellence**: At the time of its research (2011), the AUHO algorithm was demonstrated to provide the most optimal performance across heterogeneous environments compared to traditional RSS, Cost, Quality, and Lifetime-based policies.
 
 ### Traditional RSS vs. AUHO
 In traditional vertical handover, the **Received Signal Strength (RSS)** is the primary trigger. This often leads to the "Ping-pong effect," where a device rapidly switches between two networks as signal levels fluctuate, causing poor user experience and high overhead.
